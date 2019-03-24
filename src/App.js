@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 import MainInput from './main-input/main-input';
 
 class App extends Component {
@@ -16,6 +16,14 @@ class App extends Component {
     let newState = this.state;
     newState.mainInput = input;
     this.setState(newState);
+    axios.get(`http://api.giphy.com/v1/gifs/search?api_key=W44TRfEABYfip5euY6PwifWx6vh4oLvm&q=cheeseburger`)
+      .then((response) => {
+        console.log('Success!');
+        console.log(response);
+      })
+      .catch(function (response) {
+        console.log(response)
+      });
   }
 
   render() {
