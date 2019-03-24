@@ -16,7 +16,7 @@ class App extends Component {
     let newState = this.state;
     newState.mainInput = input;
     this.setState(newState);
-    axios.get(`http://api.giphy.com/v1/gifs/search?api_key=W44TRfEABYfip5euY6PwifWx6vh4oLvm&q=cheeseburger`)
+    axios.get(`http://api.giphy.com/v1/gifs/search?api_key=W44TRfEABYfip5euY6PwifWx6vh4oLvm&q=${input}`)
       .then((response) => {
         console.log('Success!');
         console.log(response);
