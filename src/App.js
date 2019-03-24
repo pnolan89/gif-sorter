@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import MainInput from './main-input/main-input';
 import ImageList from './image-list/image-list';
+import Filters from './filters/filters'
 
 class App extends Component {
   constructor() {
@@ -11,6 +12,7 @@ class App extends Component {
       imageData: []
     };
     this.handleMainInputSubmit = this.handleMainInputSubmit.bind(this);
+    this.handleSortUpdate = this.handleSortUpdate.bind(this);
   }
 
   handleMainInputSubmit(query, limit) {
@@ -25,11 +27,20 @@ class App extends Component {
       });
   }
 
+  handleSortUpdate(event) {
+    this.setState({
+      sortBy: event.target.name
+    });
+  }
+
   render() {
     return (
       <div className="App">
           <MainInput handleMainInputSubmit={this.handleMainInputSubmit}/>
-          <ImageList imageData={this.state.imageData}/>
+          <div id='list-container'>
+            <Filters handleSortUpdate={this.handleSortUpdate}/>
+            <ImageList imageData={this.state.imageData}/>
+          </div>
       </div>
     );
   }

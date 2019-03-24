@@ -14,9 +14,9 @@ class ImageList extends Component {
       <Image image={image} key={image.id}/>
     )
     return (
-      <main className="images">
+      <div id="image-list">
         {images}
-      </main>
+      </div>
     );
   }
 }

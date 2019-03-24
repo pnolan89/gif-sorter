@@ -1,3 +1,7 @@
-.images img {
+#image-list {
+  flex-basis: 90%;
+}
+
+#image-list img {
   margin: 10px;
 }

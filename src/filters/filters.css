@@ -1,0 +1,11 @@
+#filters-box {
+  flex-basis: 20%;
+  min-width: 300px;
+  background-color: #c0d0ea;
+  margin-right: 15px;
+}
+
+#filters-box table {
+  width: 100%;
+  border: 1px solid black;
+}
