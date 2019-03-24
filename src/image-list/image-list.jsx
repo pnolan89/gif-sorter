@@ -19,7 +19,18 @@ class ImageList extends Component {
           return a.images.original.size - b.images.original.size;
         });
         break;
+      case 'score-h':
+        imageData.sort((a, b) => {
+          return b._score - a._score;
+        });
+        break;
+      case 'score-l':
+        imageData.sort((a, b) => {
+          return a._score - b._score;
+        });
+        break;
     }
+    console.log(imageData);
     return imageData;
   }
 
