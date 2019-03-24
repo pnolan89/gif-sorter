@@ -19,7 +19,7 @@ class MainInput extends Component {
 
   onSubmit(event) {
     event.preventDefault();
-    this.props.handleMainInputSubmit(this.state.mainInput);
+    this.props.handleMainInputSubmit(this.state.mainInput, 3);
   }
 
   render() {

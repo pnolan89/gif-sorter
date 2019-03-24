@@ -13,14 +13,12 @@ class App extends Component {
     this.handleMainInputSubmit = this.handleMainInputSubmit.bind(this);
   }
 
-  handleMainInputSubmit(input) {
+  handleMainInputSubmit(query, limit) {
     let newState = this.state;
-    axios.get(`http://api.giphy.com/v1/gifs/search?api_key=W44TRfEABYfip5euY6PwifWx6vh4oLvm&q=${input}`)
+    axios.get(`http://api.giphy.com/v1/gifs/search?api_key=W44TRfEABYfip5euY6PwifWx6vh4oLvm&q=${query}`)
       .then((response) => {
-        newState.imageData = response.data.data;
+        newState.imageData = response.data.data.slice(0, (limit));
         this.setState(newState);
-        console.log('Success!');
-        console.log(newState);
       })
       .catch(function (response) {
         console.log(response);
