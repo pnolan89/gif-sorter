@@ -13,10 +13,10 @@ class Filters extends Component {
         <table>
           <tr>
             <td rowspan="2">Size: </td>
-            <td><button name="sort-size-l" onClick={this.props.handleSortUpdate}>Largest - smallest</button></td>
+            <td><button name="size-l" onClick={this.props.handleSortUpdate}>Largest - smallest</button></td>
           </tr>
           <tr>
-            <td><button name="sort-size-s" onClick={this.props.handleSortUpdate}>Smallest - largest</button></td>
+            <td><button name="size-s" onClick={this.props.handleSortUpdate}>Smallest - largest</button></td>
           </tr>
         </table>
       </div>

@@ -9,7 +9,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      imageData: []
+      imageData: [],
+      sortBy: ""
     };
     this.handleMainInputSubmit = this.handleMainInputSubmit.bind(this);
     this.handleSortUpdate = this.handleSortUpdate.bind(this);
@@ -39,7 +40,7 @@ class App extends Component {
           <MainInput handleMainInputSubmit={this.handleMainInputSubmit}/>
           <div id='list-container'>
             <Filters handleSortUpdate={this.handleSortUpdate}/>
-            <ImageList imageData={this.state.imageData}/>
+            <ImageList imageData={this.state.imageData} sortBy={this.state.sortBy}/>
           </div>
       </div>
     );
