@@ -8,7 +8,7 @@ class Image extends Component {
 
   render() {
     return (
-      <h1>I AM AN IMAGE! FEAR ME MORTALS! {this.props.image}</h1>
+      <h1>{this.props.image.id}</h1>
     );
   }
 }

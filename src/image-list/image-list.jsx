@@ -7,9 +7,10 @@ class ImageList extends Component {
     super(props);
   }
 
+
   render() {
-    const gifdata = [1, 2, 3, 4, 5];
-    const images = gifdata.map((image) =>
+    console.log('IMAGELIST PROPS: ', this.props);
+    const images = this.props.imageData.map((image) =>
       <Image image={image}/>
     )
     return (

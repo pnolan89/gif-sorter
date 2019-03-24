@@ -8,22 +8,22 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      mainInput: ""
+      imageData: []
     };
     this.handleMainInputSubmit = this.handleMainInputSubmit.bind(this);
   }
 
   handleMainInputSubmit(input) {
     let newState = this.state;
-    newState.mainInput = input;
-    this.setState(newState);
     axios.get(`http://api.giphy.com/v1/gifs/search?api_key=W44TRfEABYfip5euY6PwifWx6vh4oLvm&q=${input}`)
       .then((response) => {
+        newState.imageData = response.data.data;
+        this.setState(newState);
         console.log('Success!');
-        console.log(response);
+        console.log(newState);
       })
       .catch(function (response) {
-        console.log(response)
+        console.log(response);
       });
   }
 
@@ -31,7 +31,7 @@ class App extends Component {
     return (
       <div className="App">
           <MainInput handleMainInputSubmit={this.handleMainInputSubmit}/>
-          <ImageList />
+          <ImageList imageData={this.state.imageData}/>
       </div>
     );
   }
