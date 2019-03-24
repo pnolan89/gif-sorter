@@ -11,7 +11,7 @@ class ImageList extends Component {
   render() {
     console.log('IMAGELIST PROPS: ', this.props);
     const images = this.props.imageData.map((image) =>
-      <Image image={image}/>
+      <Image image={image} key={image.id}/>
     )
     return (
       <main className="images">

@@ -8,9 +8,10 @@ class Image extends Component {
 
   render() {
     return (
-      <h1>{this.props.image.id}</h1>
+      <img src={this.props.image.images.original.url} />
     );
   }
 }
 
 export default Image;
+
