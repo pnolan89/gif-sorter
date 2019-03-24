@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import MainInput from './main-input/main-input';
+import ImageList from './image-list/image-list';
 
 class App extends Component {
   constructor() {
@@ -29,9 +30,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <form id="main-input">
           <MainInput handleMainInputSubmit={this.handleMainInputSubmit}/>
-        </form>
+          <ImageList />
       </div>
     );
   }
