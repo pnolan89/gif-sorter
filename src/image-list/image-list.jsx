@@ -7,20 +7,24 @@ class ImageList extends Component {
     super(props);
   }
 
+  filterImageData(imageData) {
+    switch (this.props.sortBy) {
+      case 'size-l':
+        imageData.sort((a, b) => {
+          return b.images.original.size - a.images.original.size;
+        });
+        break;
+      case 'size-s':
+        imageData.sort((a, b) => {
+          return a.images.original.size - b.images.original.size;
+        });
+        break;
+    }
+    return imageData;
+  }
 
   render() {
-    let sortedImages = this.props.imageData;
-    if (this.props.sortBy === 'size-l') {
-      sortedImages = this.props.imageData.sort((a, b) => {
-        return b.images.original.size - a.images.original.size;
-      });
-    } else if (this.props.sortBy === 'size-s') {
-      sortedImages = this.props.imageData.sort((a, b) => {
-        return a.images.original.size - b.images.original.size;
-      });
-    }
-    console.log('SORT: ', sortedImages);
-    const images = this.props.imageData.map((image) =>
+    const images = this.filterImageData(this.props.imageData).map((image) =>
       <Image image={image} key={image.id}/>
     )
     return (
