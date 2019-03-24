@@ -29,6 +29,36 @@ class ImageList extends Component {
           return a._score - b._score;
         });
         break;
+      case 'frames-h':
+        imageData.sort((a, b) => {
+          return b.images.original.frames - a.images.original.frames;
+        });
+        break;
+      case 'frames-l':
+        imageData.sort((a, b) => {
+          return a.images.original.frames - b.images.original.frames;
+        });
+        break;
+      case 'height-l':
+        imageData.sort((a, b) => {
+          return b.images.original.height - a.images.original.height;
+        });
+        break;
+      case 'height-s':
+        imageData.sort((a, b) => {
+          return a.images.original.height - b.images.original.height;
+        });
+        break;
+      case 'width-l':
+        imageData.sort((a, b) => {
+          return b.images.original.width - a.images.original.width;
+        });
+        break;
+      case 'width-s':
+        imageData.sort((a, b) => {
+          return a.images.original.width - b.images.original.width;
+        });
+        break;
     }
     console.log(imageData);
     return imageData;

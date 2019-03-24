@@ -25,6 +25,27 @@ class Filters extends Component {
           <tr>
             <td><button name="score-l" onClick={this.props.handleSortUpdate}>Lowest - highest</button></td>
           </tr>
+          <tr>
+            <td rowspan="2">Frames: </td>
+            <td><button name="frames-h" onClick={this.props.handleSortUpdate}>Highest - lowest</button></td>
+          </tr>
+          <tr>
+            <td><button name="frames-l" onClick={this.props.handleSortUpdate}>Lowest - highest</button></td>
+          </tr>
+          <tr>
+            <td rowspan="2">Height: </td>
+            <td><button name="height-l" onClick={this.props.handleSortUpdate}>Largest - smallest</button></td>
+          </tr>
+          <tr>
+            <td><button name="height-s" onClick={this.props.handleSortUpdate}>Smallest - largest</button></td>
+          </tr>
+          <tr>
+            <td rowspan="2">Width: </td>
+            <td><button name="width-l" onClick={this.props.handleSortUpdate}>Largest - smallest</button></td>
+          </tr>
+          <tr>
+            <td><button name="width-s" onClick={this.props.handleSortUpdate}>Smallest - largest</button></td>
+          </tr>
         </table>
       </div>
     );
