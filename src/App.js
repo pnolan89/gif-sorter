@@ -14,6 +14,7 @@ class App extends Component {
     };
     this.handleMainInputSubmit = this.handleMainInputSubmit.bind(this);
     this.handleSortUpdate = this.handleSortUpdate.bind(this);
+    this.handleTrendingSubmit = this.handleTrendingSubmit.bind(this);
   }
 
   handleMainInputSubmit(query, limit) {
@@ -23,7 +24,20 @@ class App extends Component {
         newState.imageData = response.data.data.slice(0, limit);
         this.setState(newState);
       })
-      .catch(function (response) {
+      .catch((response) => {
+        console.log(response);
+      });
+  }
+
+  handleTrendingSubmit(limit) {
+    let newState = this.state;
+    axios.get(`http://api.giphy.com/v1/gifs/trending?api_key=W44TRfEABYfip5euY6PwifWx6vh4oLvm`)
+      .then((response) => {
+        newState.imageData = response.data.data.slice(0, limit);
+        this.setState(newState);
+        // console.log('TRENDING: ', response);
+      })
+      .catch((response) => {
         console.log(response);
       });
   }
@@ -37,7 +51,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <MainInput handleMainInputSubmit={this.handleMainInputSubmit}/>
+          <MainInput handleMainInputSubmit={this.handleMainInputSubmit} handleTrendingSubmit={this.handleTrendingSubmit}/>
           <div id='list-container'>
             <Filters handleSortUpdate={this.handleSortUpdate}/>
             <ImageList imageData={this.state.imageData} sortBy={this.state.sortBy}/>

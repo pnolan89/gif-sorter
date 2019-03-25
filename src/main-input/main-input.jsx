@@ -10,6 +10,7 @@ class MainInput extends Component {
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
 
   onChange(event) {
@@ -21,6 +22,11 @@ class MainInput extends Component {
   onSubmit(event) {
     event.preventDefault();
     this.props.handleMainInputSubmit(this.state.query, this.state.limit);
+  }
+
+  onClick(event) {
+    event.preventDefault();
+    this.props.handleTrendingSubmit(this.state.limit);
   }
 
   render() {
@@ -55,6 +61,7 @@ class MainInput extends Component {
         </select>
         <input id="main-input-textbox" name="query" type="text" onChange={this.onChange}/>
         <input id="main-input-submit" type="submit" value="Submit" />
+        <input id="trending-button" type="button" value="Trending" onClick={this.onClick} />
       </form>
     );
   }
