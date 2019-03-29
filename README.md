@@ -21,7 +21,7 @@ Once the images are displayed, use the filters on the left-hand menu to sort the
 
 ## Screenshots
 
-<img src="https://github.com/pnolan89/dungeon-wizard/blob/master/public/images/campaign-index.png" alt="Campaign Index" width="1000" />
+<img src="https://github.com/pnolan89/gif-sorter/blob/master/public/Screen%20Shot%202019-03-28%20at%207.41.15%20PM.png" alt="Main View" width="1000" />
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
