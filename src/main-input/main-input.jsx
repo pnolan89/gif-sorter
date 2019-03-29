@@ -6,7 +6,7 @@ class MainInput extends Component {
     super(props);
     this.state = {
       query: "",
-      limit: "1"
+      limit: "6"
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -32,13 +32,14 @@ class MainInput extends Component {
   render() {
     return (
       <form id="main-input" onSubmit={this.onSubmit}>
-        <select name="limit" onChange={this.onChange}>
+        <label for="limit">Give me...</label>
+        <select id="limit-select" name="limit" onChange={this.onChange}>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
           <option value="5">5</option>
-          <option value="6">6</option>
+          <option value="6" selected="selected">6</option>
           <option value="7">7</option>
           <option value="8">8</option>
           <option value="9">9</option>
@@ -61,7 +62,7 @@ class MainInput extends Component {
         </select>
         <input id="main-input-textbox" name="query" type="text" onChange={this.onChange}/>
         <input id="main-input-submit" type="submit" value="Submit" />
-        <input id="trending-button" type="button" value="Trending" onClick={this.onClick} />
+        <input id="trending-button" type="button" value="I'm feeling trendy..." onClick={this.onClick} />
       </form>
     );
   }

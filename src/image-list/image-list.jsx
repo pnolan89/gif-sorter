@@ -60,7 +60,6 @@ class ImageList extends Component {
         });
         break;
     }
-    console.log(imageData);
     return imageData;
   }
 

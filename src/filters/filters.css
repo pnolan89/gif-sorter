@@ -21,3 +21,10 @@
   text-align: left;
   padding-left: 10px;
 }
+
+.sort-btn {
+  appearance: none;
+  height: 30px;
+  border-radius: 5px;
+
+}

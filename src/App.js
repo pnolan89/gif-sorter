@@ -35,7 +35,6 @@ class App extends Component {
       .then((response) => {
         newState.imageData = response.data.data.slice(0, limit);
         this.setState(newState);
-        // console.log('TRENDING: ', response);
       })
       .catch((response) => {
         console.log(response);
